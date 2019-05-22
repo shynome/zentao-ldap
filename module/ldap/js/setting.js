@@ -1,11 +1,11 @@
 function onClickTest() {
-	var par = 'host=' + $('#ldapHost').val() + '&dn=';
-	par += $('#ldapBindDN').val().replace(/\=/g,"%3D");
-	par += '&pwd=' + $('#ldapPassword').val().replace(/\=/g,"%3D");
-
-	$.get(createLink('ldap', 'test', par), function(data) {
+	$.post(createLink('ldap', 'test'),{
+		host: $('#ldapHost').val(),
+		dn: $('#ldapBindDN').val(),
+		pwd: $('#ldapPassword').val(),
+	}, function(data) {
 		$('#testRlt').html(data);
-    });
+	});
 }
 
 function sync() {

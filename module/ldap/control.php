@@ -73,7 +73,7 @@ class ldap extends control
 
     public function test()
     {
-        echo $this->ldap->identify($this->get->host, $this->get->dn, $this->get->pwd);
+        echo $this->ldap->identify($this->post->host, $this->post->dn, $this->post->pwd);
     }
 
     public function sync()

@@ -26,6 +26,10 @@ public function identify($account, $password)
 							->set('last')->eq($last)
 							->where('account')->eq($account)->exec();
 						$user->last = date(DT_DATETIME1, $user->last);
+						
+						/* Create cycle todo in login. */
+            $todoList = $this->dao->select('*')->from(TABLE_TODO)->where('cycle')->eq(1)->andWhere('account')->eq($user->account)->fetchAll('id');
+            $this->loadModel('todo')->createByCycle($todoList);
         	}
         }		
 		return $user;

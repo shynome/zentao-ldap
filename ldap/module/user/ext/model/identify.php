@@ -19,6 +19,8 @@ public function identify($account, $password)
 						$last = $this->server->request_time;
 						// 禅道有多处地方需要二次验证密码, 所以需要保存密码的 MD5 在 session 中以供后续验证
 						$user->password = md5($password);
+						// 判断用户是否来自 ldap
+						$user->fromldap = true;
 						$this->dao->update(TABLE_USER)->set('visits = visits + 1')->set('ip')->eq($ip)->set('ip')->eq($ip)->set('last')->eq($last)->where('account')->eq($account)->exec();
 						$user->last = date(DT_DATETIME1, $user->last);
 						

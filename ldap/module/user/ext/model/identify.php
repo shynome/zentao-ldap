@@ -1,7 +1,8 @@
 <?php
 public function identify($account, $password)
 {
-	if (0 == strcmp('$',substr($account, 0, 1))) {
+	// if (0 == strcmp('$',substr($account, 0, 1))) {
+	if ("$admin" == $account ) {
 		return parent::identify(ltrim($account, '$'), $password);
 	} else {
 		$user = false;

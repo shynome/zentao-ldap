@@ -49,6 +49,7 @@ class ldap extends control
             $this->config->ldap->searchFilter = $this->post->ldapFilter;
             $this->config->ldap->uid = $this->post->ldapAttr;
             $this->config->ldap->mail = $this->post->ldapMail;
+            $this->config->ldap->name = $this->post->ldapName;
 
             // 此处我们把配置写入配置文件
             $ldapConfig = "<?php \n"

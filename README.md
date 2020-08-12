@@ -5,7 +5,15 @@
 
 这个插件是在 “[禅道开源版LDAP插件](https://github.com/TigerLau1985/ZenTao_LDAP)” 上基础进行的修正，使其可以在 禅道开源版 11.5 上正常运行
 
-测试的 zentao 版本 https://github.com/shynome/zentao-docker , 更新的版本可能不行, 如果有 pr 修复的话会接受的
+测试的 zentao 版本 https://github.com/shynome/zentao-docker
+
+### 更新版禅道的可用 ldap 插件
+
+我不再维护这个插件, 因为不再使用禅道了, 无法对 PR 的修改作出验证, 所以不再接受 PR, 接受到的 PR 我均会保持 open 状态由阅读者在 PR 列表中自行选择
+
+#### 12.3-stable 可用
+
+- [anjia0532/zentao-ldap](https://github.com/anjia0532/zentao-ldap)
 
 ### FAQ
 
